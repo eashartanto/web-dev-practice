@@ -1,0 +1,40 @@
+body {
+  font-size: 1.5em;
+  color: black;
+  background: rgb(175, 175, 214);
+  padding: 5%;
+}
+
+.container {
+  padding: 10px;
+  background: rgb(212, 193, 230);
+  margin: 45px auto;
+
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 200px;
+  align-items: center;
+  align-content: stretch;
+}
+
+.item {
+  color: paleturquoise;
+  padding: 15px;
+  margin: 5px;
+  background: blue;
+  flex-grow: 1;
+}
+
+.item1 {
+  order: 2;
+  flex-shrink: 4;
+  flex-basis: 20%;
+}
+
+.item4 {
+  order: -1;
+  align-self: flex-start;
+}
