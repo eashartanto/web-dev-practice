@@ -1,0 +1,18 @@
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid black;
+  padding: 15px;
+}
+thead,
+tfoot {
+  background-color: aquamarine;
+}
+
+tbody tr:nth-child(even) {
+  background-color: burlywood;
+}
