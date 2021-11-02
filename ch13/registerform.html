@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+</head>
+<body>
+    <h2>Registration form</h2>
+    <form id="regform" method="get" action="process.html">
+       <label for='name'>Name: </label> <input type="text" id="name" name="name" /> <br />
+        Email: <input type="text" id="email" name="email" /><br />
+        Gender: 
+        <input type="radio" id="male" name="gender" value="m"> Male
+        <input type="radio" id="female" name="gender" value="f"> Female
+        <input type="radio" id="other" name="gender" value="o"> Other <br />
+
+        <fieldset>
+            <legend>Languages</legend>
+            <input type="checkbox" id="html" name="lang" value="html" /> HTML
+            <input type="checkbox" id="css" name="lang" value="css" /> css
+            <input type="checkbox" id="js" name="lang" value="js" /> JavaScript <br />
+        </fieldset>
+       
+        
+
+        Country:
+        <select id="country" name="country">
+            <option value="ca">Canada</option>
+            <option value="us">US</option>
+            <option value="mexico">Mexico</option>
+        </select>
+        <br />
+
+        Comment: 
+        <textarea name="comments" rows="6" cols="40" ></textarea> <br />
+        <input type="submit" value="Register" />
+    </form>
+</body>
+</html>
