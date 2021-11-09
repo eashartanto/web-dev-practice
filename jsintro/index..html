@@ -10,8 +10,51 @@
 <body>
     <h1>Welcome</h1>
     <script>
-        alert("hello from internall");
+        // single line comment
+        /*
+            multiline comment
+        */
+
+        let aaa = null;
+
+        let fname = "Marie";
+        let lname = "Rishea \"aa\" ";
+
+        let fullname = fname + " " + lname;
+
+        //alert(fullname);
+        
+        
+        let age = parseInt(prompt("please enter your age"));
+        //let aa = 21;
+        if(age > 0  && age < 12){
+             alert('you are  minor');
+        } else if (age >= 12 && age < 21){
+            alert('you are a youth');
+        } else if (age >= 21){
+            alert("you are an Adult");
+        } else {
+            alert("invalid age");
+        }
+        
+        console.log(age);
+
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+        }
+
+        document.write("<h1>heeeee</h1>");
+        //ask user enter agr
+        
+       //if age is leas 12 and greater than 0 - you are a minor 
+       //if age is leas 21 and greater than 12 - you are a youth
+       //if age is greater then or equal to 21 - you are a adult
+       // else invalid ag
+
+        
+       // alert("hello from internal");
     </script>
-    <script src="js/main.js"></script>
+   <script src="js/main.js"></script>
+   <script src="app.js"></script>
 </body>
 </html>
