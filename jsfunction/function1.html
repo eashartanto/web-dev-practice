@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Js function</title>
+</head>
+<body>
+    <h1>hello world</h1>
+    <h3 id="result">Result</h3>
+    <form>
+        First Name <input type="text" id="fname" > <br />
+
+        <input type="button" value="Say Hello" onclick="displayHello();" /> <br />
+    </form>
+    <script>
+        console.log(add(3,5));
+        //function declaration
+        function add(num1, num2){
+            return num1 + num2;
+        }
+       
+        //function expression
+        let squarefun = function(num1) {
+            return num1 * num1;
+        };
+
+        console.log(squarefun(5));
+
+
+        //arrow function
+        // let mutiple5 = function(x, y){
+        //     return x * Y;
+        // }
+
+        let mutiple5 = (x, y) =>  x * Y;
+            
+    //function that receives a name and return hello name
+    
+     function displayHello(){
+         //alert('in function');
+        let fname = document.getElementById('fname').value;
+
+        document.getElementById('result').innerHTML = "Hello " + fname;
+        document.getElementById('result').style.color = "green";
+         //console.log("Hello " + name);
+     }
+
+     //displayHello('Marie');
+
+
+        
+    </script>
+</body>
+</html>
