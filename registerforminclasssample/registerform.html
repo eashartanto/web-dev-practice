@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <form id="reg" name="reg" method="get" action="contactform.html">
+      <fieldset>
+        <legend>Register form</legend>
+        Firstname:
+        <input type="text" name="fname" id="fname" maxlength="10" size="15" />
+        <span>*</span><br />
+        Lastname:
+        <input
+          type="text"
+          name="lname"
+          id="lname"
+          maxlength="10"
+          size="15"
+        /><br />
+        Gender: <input type="radio" value="m" name="gender" id="genderm" /> Male
+        <input
+          type="radio"
+          value="f"
+          name="gender"
+          id="genderf"
+          checked="checked"
+        />
+        Female<br />
+        Languages:
+        <input
+          type="checkbox"
+          name="html"
+          id="html"
+          value="html"
+          checked="checked"
+        />HTML <input type="checkbox" name="css" id="css" value="css" />CSS
+        <input type="checkbox" name="xml" id="xml" value="xml" />XML<br />
+        Country:
+        <select id="country" name="country">
+          <option value="ca">CANADA</option>
+          <option value="us">US</option>
+          <option value="mn" selected="selected">MEXICO</option> </select
+        ><br />
+
+        comments:
+        <textarea rows="10" cols="50" name="comment" id="comment"></textarea>
+        <input type="button" value="register" id="register" />
+      </fieldset>
+    </form>
+    <div id="test"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

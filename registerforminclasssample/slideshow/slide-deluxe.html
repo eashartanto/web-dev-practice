@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 500px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr><td colspan="5">
+        <img src="images/1L.jpg" name="slideshow" id="slideshow" width="430" height="300">
+    </td>
+    </tr>
+    <tr>
+        <td colspan="5" >
+            <form name="slideform">
+                <select name="slideselect" id="slideselect" onChange="ChangeImages2()">
+                    <option value="">Select an image to view --</option>
+                    <option value="images/1L.jpg">Pod 1</option>
+                    <option value="images/2L.jpg">Pod 2</option>
+                    <option value="images/3L.jpg">Pod 3</option><br>
+                    <option value="images/4L.jpg">Pod 4</option><br>
+                    <option value="images/5L.jpg">Pod 5</option><br>
+                    <option value="images/6L.jpg">Pod 6</option><br>
+                    <option value="images/7L.jpg">Pod 7</option><br>
+                    <option value="images/8L.jpg">Pod 8</option><br>
+                    <option value="images/9L.jpg">Pod 9</option><br>
+                    <option value="images/10L.jpg">Pod 10</option><br>
+                </select>
+            </form>
+        </td>
+
+    </tr>
+    <tr>
+        <td><button id="fis" onclick="first()">First</button></td>
+        <td><button id="pre" onclick="ChangeImages(-1)">Previous</button></td>
+        <td><button id="aut" onclick="auto()">Auto/Stop</button></td>
+        <td><button id="nex" onclick="ChangeImages(1)">Next</button></td>
+        <td><button id="las" onclick="last()">Last</button></td>
+    </tr>
+
+</table>
+<script>
+    //declare an array of images
+    let myImagesArray = ["images/1L.jpg","images/2L.jpg","images/3L.jpg","images/4L.jpg","images/5L.jpg","images/6L.jpg","images/7L.jpg","images/8L.jpg","images/9L.jpg","images/10L.jpg"];
+
+
+
+    //make a slide to display the images
+    let ImageNumber = 0;
+    let difference = myImagesArray.length -1;
+
+    let delay = 500;
+    let lock = false;
+    let run;
+
+    function ChangeImages(direction)
+    {//begin function
+        
+		ImageNumber = ImageNumber + direction;
+
+		if(ImageNumber > difference)
+		{//begin inner first if
+			ImageNumber = 0;
+		}//end inner first if
+
+		if(ImageNumber < 0)
+		{//begin inner second if
+			ImageNumber = difference;
+		}//end inner second if
+		document.getElementById('slideshow').src = myImagesArray[ImageNumber];
+
+       
+    }//end function
+
+    function first()
+    {//begin function
+        ImageNumber = 0;
+        document.getElementById('slideshow').src = myImagesArray[ImageNumber];
+
+    }//end function
+
+    function last()
+    {//begin function
+        ImageNumber = myImagesArray.length -1;
+        document.getElementById('slideshow').src = myImagesArray[ImageNumber];
+
+    }//end function
+
+
+    function auto()
+    {//begin function
+        // if it's currently scrolling do this
+        if(lock == true)
+        {//begin if
+            lock = false;
+            window.clearInterval(run);
+        }//end if
+        // if the function isn't scrolling do this
+        else if(lock == false)
+        {//begin else if
+            lock = true;
+            run = setInterval("ChangeImages(1)", delay);
+
+        }//end else if
+
+
+    }//end function
+
+
+
+    function ChangeImages2()
+    {//begin function
+
+
+        ImageNumber = document.getElementById("slideselect").selectedIndex -1;
+        if(ImageNumber < 0)
+        {//begin if
+            ImageNumber = 0;
+        }//end if
+        document.getElementById('slideshow').src = myImagesArray[ImageNumber];
+
+    }//end function
+</script>
+</body>
+</html>

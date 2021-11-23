@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+		<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title>Task array</title>
+
+		</head>
+
+	<body>
+		
+			
+		<h1>Task List Manager</h1>
+		<h4>Tasks</h4>
+		<div id="taskCon"> </div>
+		<h4>Add Task </h4>
+		Task:<input type="text" id="addtask" /><br/><br/>
+		<button id="button1" onclick="addTask();">Add Task </button>
+		<br/><br/>
+		<h4>Delete Task</h4>
+		Task:<select id="taskDropdown"></select>
+		<button id="button2" onclick="deletetask();">Delete Task</button>
+
+		
+		<script>
+			let tasks=['Plan the chapter','Write the Chapter','Proofread the chapter'];
+			function listTask(){
+				let results ="<ol>";
+				for(let i=0;i<tasks.length;i++){
+					results += "<li>" + tasks[i] + "</li>";
+				}
+				results += "</ol>";
+				document.getElementById("taskCon").innerHTML = results;
+
+			}
+
+			listTask();
+
+			function addTask(){
+				let addTask = document.getElementById("addtask").value;
+				tasks.push(addTask);
+				document.getElementById("addtask").value="";
+				listTask();
+            	dropdown();
+
+			}
+			function dropdown(){
+				let opt="";
+				for(let i=0;i<tasks.length;i++){
+					opt += "<option>" + tasks[i] + "</option>";
+				}
+				console.log(opt);
+
+				document.getElementById("taskDropdown").innerHTML = opt;
+
+			}
+			dropdown();
+			function deletetask3(){
+				let task=document.getElementById("taskDropdown").value;
+				for(let i=0;i<tasks.length;i++){
+					if(task==tasks[i])
+						tasks.splice(i,1);
+				}
+				listTask();
+				dropdown();
+			}
+			function deletetask(){
+				let task=document.getElementById("taskDropdown");
+				tasks.splice(task.selectedIndex,1);
+
+				listTask();
+				dropdown();
+			}
+
+		</script>
+	  
+	</body>
+</html>
