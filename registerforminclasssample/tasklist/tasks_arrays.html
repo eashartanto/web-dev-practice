@@ -24,6 +24,9 @@
 		
 		<script>
 			let tasks=['Plan the chapter','Write the Chapter','Proofread the chapter'];
+			listTask();
+			dropdown();
+
 			function listTask(){
 				let results ="<ol>";
 				for(let i=0;i<tasks.length;i++){
@@ -34,7 +37,7 @@
 
 			}
 
-			listTask();
+		
 
 			function addTask(){
 				let addTask = document.getElementById("addtask").value;
@@ -54,7 +57,7 @@
 				document.getElementById("taskDropdown").innerHTML = opt;
 
 			}
-			dropdown();
+			
 			function deletetask3(){
 				let task=document.getElementById("taskDropdown").value;
 				for(let i=0;i<tasks.length;i++){

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">This is div1</div>
+    <h1>This is heading 1</h1>
+    <p id="para1">This is para 1</p>
+    <p class="paraclass">This is para 2</p>
+    <p class="paraclass">This is para 3</p>
+    <div>This the div 1</div>
+    <div id="div2">
+        <h2>Heading</h2>
+        <p>this is para</p>
+    </div>
+
+    <script>
+        //create element
+        let someContent = document.createElement('h3');
+        someContent.innerHTML = "This is my some content";
+
+        //append content
+        let d1 = document.getElementById('div1');
+        d1.prepend(someContent);
+
+        //selesct element by tag name
+
+        document.getElementsByTagName('h1')[0].remove();
+
+        let p1 = document.getElementById('para1');
+        p1.style.color = "red";
+        p1.setAttribute('class', 'redp');
+
+        //select by class name
+        let p2 = document.getElementsByClassName('paraclass');
+      console.log(p2[1].textContent)
+
+      //queryselector
+      let head1 = document.querySelector('#div2 p')
+      console.log(head1);
+
+      let he4 = document.querySelectorAll('p')
+      console.log(he4);
+    </script>
+</body>
+</html>
