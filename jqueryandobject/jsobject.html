@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        let person = {
+            name: "marie",
+            age: 24,
+            email: 'marie@humber.ca',
+            hobbies: ['reading', 'swimming'],
+            displayAge: function(){
+                return this.age;
+            }
+        };
+
+        let persons = [
+            {
+                name: "marie",
+                age: 24,
+                email: 'marie@humber.ca',
+                hobbies: ['reading', 'swimming']
+            }, 
+            {
+                name: "marie2",
+                age: 24,
+                email: 'marie@humber.ca',
+                hobbies: ['reading', 'swimming']
+            },
+            {
+                name: "marie3",
+                age: 24,
+                email: 'marie@humber.ca',
+                hobbies: ['reading', 'swimming']
+            },
+            {
+                name: "marie4",
+                age: 24,
+                email: 'marie@humber.ca',
+                hobbies: ['reading', 'swimming']
+            },
+        ]
+
+
+        let display = "<ul>";
+        $.each(persons, function(index, p){
+            display += "<h3>" + p.name + "</h3>"
+        }
+        );
+
+        $('#result').html(display);
+
+
+        // let display = '';
+        // for(let p of persons){
+        //     display += "<h3>" + p.name + "</h3>"
+        //     display += "<p>" + p.email + "</p>"
+        //     display += "<p>" + p.hobbies[0] + "</p>"
+        // }
+
+        // document.querySelector('#result').innerHTML = display;
+        console.log(person.name);
+    </script>
+</body>
+</html>

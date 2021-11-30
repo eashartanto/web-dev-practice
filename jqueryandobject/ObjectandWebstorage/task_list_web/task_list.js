@@ -1,7 +1,13 @@
 'use strict';
 
 $(document).ready(function () {
-  localStorage.removeItem('name');
+  // let name = 'David';
+  // localStorage.setItem('myname', name);
+  // localStorage.removeItem('myname');
+  // alert(localStorage.getItem('myname'));
+
+  localStorage.setItem('hobbies', JSON.stringify(['hobby1', 'hobby2']));
+  console.log(localStorage.getItem('hobbies'));
 
   $('#add_task').click(function () {
     let textbox = $('#task');
